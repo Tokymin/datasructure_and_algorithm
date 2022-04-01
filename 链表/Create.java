@@ -7,15 +7,12 @@ import java.util.*;
 class Node {
     protected Node next;
     protected int data;
-
     public Node(int data) {   //构造器来赋值
         this.data = data;
         this.next = null;
     }
-
     public Node() {
     }
-
 }
 
 class operation {
