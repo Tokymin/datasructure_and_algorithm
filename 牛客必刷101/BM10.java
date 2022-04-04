@@ -72,6 +72,5 @@ public class BM10 {
             }
             return p1;
         }
-
     }
 }
