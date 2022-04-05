@@ -1,8 +1,10 @@
-package 牛客必刷101;
+package 牛客必刷101.链表;
 // 链表指定区间内反转
 //将一个节点数为size链表m位置到n位置之间的区间反转
 //链表其他部分不变，返回头节点
 
+
+import 牛客必刷101.链表.ListNode;
 
 public class BM2 {
     public class Solution1 {

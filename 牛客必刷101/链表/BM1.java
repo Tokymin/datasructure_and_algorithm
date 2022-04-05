@@ -1,4 +1,4 @@
-package 牛客必刷101;
+package 牛客必刷101.链表;
 
 // 反转链表
 class ListNode {
