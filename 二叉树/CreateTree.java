@@ -7,6 +7,9 @@ public class CreateTree {
     // 例如：一棵1，2，3，4，5，6，7的完全二叉树，其加上叶子节点的前序遍历是124005003600700 -->BM23 [1, 2, 4, 5, 3, 6, 7]
     // 按照这个输入进去就创建好了，其中序遍历是[4, 2, 5, 1, 6, 3, 7]  -->BM24
     // 后续遍历 [4, 5, 2, 6, 7, 3, 1] -->BM25
+    // 层次遍历 [1]
+                //[2, 3]
+                //[4, 5, 6, 7] -->BM26
     public static BTNode preCreat(BTNode btnode) {
         Scanner in = new Scanner(System.in);
 //        System.out.println("输入结点的值");
