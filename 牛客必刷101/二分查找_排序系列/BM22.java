@@ -18,7 +18,7 @@ package 牛客必刷101.二分查找_排序系列;
 //●step 3:然后比较两个数字大小，根据大小关系返回1或者-1，如果全部比较完都无法比较出大小关系，则返回0.
 
 public class BM22 {
-    public class Solution {
+    public class Solution1 {
         public int compare (String version1, String version2) {
             int n1 = version1.length();
             int n2 = version2.length();
@@ -42,6 +42,39 @@ public class BM22 {
                     return -1;
             }
             return 0; //版本号相同
+        }
+    }
+
+    //方法二:分割截取(思路扩展)
+
+    //具体做法:
+    //既然方法一都是每次以点为界限，将字符转换为数字，那我们是不是可以尝试提前就把它们分割好呢?分割也不难，可
+    //以借助Java的split函数直接按照点为间隔划分开。C++没有这么方便的split函数了，但是我们还有流输入
+    //istringstream,只需要用一个字符型变量承接点，其他部分就是逐渐输入数组中。
+    //●step1: 使用split函数或者字符串流输入，按照点将两个原始字符串分割，使每个修订号的数字单独呈现在数组
+    //中。
+    //●step2:遍历数组，每次各自取出一个数字比较，较短的版本号没有可取的数字了，就直接取0。
+    //●step3:遍历取出的数字字符串，将其转换成数字，然后比较数字大小。根据大小关系返回1或者-1，如果全部比
+    //较完都无法比较出大小关系，则返回0.
+    public class Solution2 {
+        public int compare (String version1, String version2) {
+            String[] nums1 = version1.split("\\."); //按照.划分
+            String[] nums2 = version2.split("\\.");
+            for(int i = 0; i < nums1.length || i < nums2.length; i++){
+                String str1 = i < nums1.length ? nums1[i] : "0"; //较短的版本号后续都取0
+                String str2 = i < nums2.length ? nums2[i] : "0";
+                long num1 = 0;
+                for(int j = 0; j < str1.length(); j++) //字符串转数字
+                    num1 = num1 * 10 + (str1.charAt(j) - '0');
+                long num2 = 0;
+                for(int j = 0; j < str2.length(); j++)
+                    num2 = num2 * 10 + (str2.charAt(j) - '0');
+                if(num1 > num2) //比较数字大小
+                    return 1;
+                if(num1 < num2)
+                    return -1;
+            }
+            return 0;
         }
     }
 }
