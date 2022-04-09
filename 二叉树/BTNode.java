@@ -9,6 +9,11 @@ public class BTNode {
     public BTNode(){
     }
     //新的构造函数，其实也可以简写
+    public BTNode(int data){
+        this.data=data;
+        this.lchild=null;
+        this.rchild=null;
+    }
     public BTNode(int data ,BTNode lchild ,BTNode rchild){
         this.data=data;
         this.lchild=lchild;
