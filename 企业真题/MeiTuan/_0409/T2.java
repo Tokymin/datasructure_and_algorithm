@@ -29,7 +29,6 @@ import java.util.*;
 //beta tom alpha bamma
 
 public class T2 {
-
     private static int compareStr(String a, String b){
         if(a.charAt(0) != b.charAt(0)) return b.charAt(0) - a.charAt(0);
         int len = Math.min(a.length(), b.length());
